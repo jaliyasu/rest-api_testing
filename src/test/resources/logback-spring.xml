@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<contextName>ASSURITY-API</contextName>
+
+	<property name="LOG_HOME" value="/var/log/assurity-test" />
+	<property name="LOG_FILE_NAME" value="assurity-test.log" />
+	<property name="LOG_ARCHIVE_HOME" value="${LOG_HOME}/archived" />
+
+	<!-- local development application environment -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+			<![CDATA[
+			%d{HH:mm:ss.SSS} %contextName [${ENV}] [%X{CRID}] [%thread] %-5level %logger{5} [%X{URI}] - %msg%n%rEx{20}
+			]]>
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- <appender name="file" class="ch.qos.logback.core.FileAppender"> -->
+	<!-- <file>${LOG_HOME}/${LOG_FILE_NAME}</file> -->
+	<!-- <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"> -->
+	<!-- <Pattern> -->
+	<!-- <![CDATA[ -->
+	<!-- %d{HH:mm:ss.SSS} %contextName [${ENV}] [%X{CRID}] [%thread] %-5level 
+		%logger{5} [%X{URI}] - %msg%n%rEx{20} -->
+	<!-- ]]> -->
+	<!-- </Pattern> -->
+	<!-- </encoder> -->
+	<!-- </appender> -->
+
+	<root level="INFO">
+		<appender-ref ref="console" />
+		<!-- <appender-ref ref="file" /> -->
+	</root>
+
+</configuration>

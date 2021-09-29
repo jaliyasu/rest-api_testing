@@ -1,0 +1,8 @@
+/target/
+/.classpath
+/.project
+/.settings/
+/.project
+/taget_junit
+/target_json
+.idea/
